@@ -23,10 +23,15 @@ tldr
 ## ~/.zshrc
 
 I use [Oh My Zsh](https://ohmyz.sh/)
+I use [Oh My Zsh](https://ohmyz.sh/) with mostly standard settings.
 
 ```bash
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
