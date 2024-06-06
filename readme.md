@@ -22,7 +22,6 @@ tldr
 
 ## ~/.zshrc
 
-I use [Oh My Zsh](https://ohmyz.sh/)
 I use [Oh My Zsh](https://ohmyz.sh/) with mostly standard settings.
 
 ```bash
