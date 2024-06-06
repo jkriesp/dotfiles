@@ -1,6 +1,9 @@
 # config-repository
+
 A curated collection of configurations tailored to personal preferences across various applications and environments. As I continue to add to this repository, it serves as a hub for managing and maintaining consistency in my computing environment.
+
 ## Brew
+
 To install all of the below in a single go:
 
 `xargs brew install < my_brews.txt`
@@ -18,6 +21,7 @@ tldr
 ```
 
 ## ~/.zshrc
+
 I use [Oh My Zsh](https://ohmyz.sh/)
 
 ```bash
@@ -40,7 +44,9 @@ alias lS='eza -1'
 alias lt='eza --tree --level=2'
 alias l.="eza -a | grep -E '^\.'"
 ```
+
 ## VS Code
+
 ```json
 "terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
 "window.zoomLevel": 0,
@@ -49,4 +55,8 @@ alias l.="eza -a | grep -E '^\.'"
 "editor.minimap.enabled": false,
 "editor.linkedEditing": true,
 "editor.fontSize": 16,
+"files.autoSave": "onFocusChange",
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnSave": true,
+"eslint.run": "onSave"
 ```
