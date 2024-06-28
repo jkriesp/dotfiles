@@ -51,6 +51,8 @@ alias l.="eza -a | grep -E '^\.'"
 
 ## VS Code
 
+### Settings
+
 ```json
 "terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
 "window.zoomLevel": 0,
@@ -63,4 +65,61 @@ alias l.="eza -a | grep -E '^\.'"
 "editor.defaultFormatter": "esbenp.prettier-vscode",
 "editor.formatOnSave": true,
 "eslint.run": "onSave"
+```
+
+### Snippets
+
+```json
+{
+  "Print to console": {
+    "prefix": "cl",
+    "scope": "javascript,typescript,javascriptreact",
+    "body": ["console.log($1)"],
+    "description": "console.log"
+  },
+  "reactComponent": {
+    "prefix": "rfc",
+    "scope": "javascript,typescript,javascriptreact",
+    "body": [
+      "function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "React component"
+  },
+  "importCSSModule": {
+    "prefix": "csm",
+    "scope": "javascript,typescript,javascriptreact",
+    "body": ["import styles from './${TM_FILENAME_BASE}.module.css'"],
+    "description": "Import CSS Module as `styles`"
+  },
+  "reactStyledComponent": {
+    "prefix": "rsc",
+    "scope": "javascript,typescript,javascriptreact",
+    "body": [
+      "import styled from 'styled-components'",
+      "",
+      "const Styled${TM_FILENAME_BASE} = styled.$0``",
+      "",
+      "function ${TM_FILENAME_BASE}() {",
+      "\treturn (",
+      "\t\t<Styled${TM_FILENAME_BASE}>",
+      "\t\t\t${TM_FILENAME_BASE}",
+      "\t\t</Styled${TM_FILENAME_BASE}>",
+      "\t)",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE}",
+      ""
+    ],
+    "description": "React styled component"
+  }
+}
 ```
