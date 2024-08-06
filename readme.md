@@ -18,6 +18,7 @@ jq
 node
 nvm
 tldr
+hyperkey
 ```
 
 ## ~/.zshrc
