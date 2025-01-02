@@ -19,6 +19,7 @@ node
 nvm
 tldr
 hyperkey
+background-music
 ```
 
 ## ~/.zshrc
