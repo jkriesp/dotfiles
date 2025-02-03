@@ -2,6 +2,15 @@
 
 A curated collection of configurations tailored to personal preferences across various applications and environments. As I continue to add to this repository, it serves as a hub for managing and maintaining consistency in my computing environment.
 
+## Mac Specific
+Activate Autohide of dock System Preferences → Dock → Autohide. Then run the following command:
+
+`defaults write com.apple.dock autohide-delay -float 0; killall Dock`
+
+restore to default:
+
+`defaults delete com.apple.dock autohide-delay; killall Dock`
+
 ## Brew
 
 To install all of the below in a single go:
