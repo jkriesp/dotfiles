@@ -5,11 +5,13 @@ A curated collection of configurations tailored to personal preferences across v
 ## Mac Specific
 Activate Autohide of dock System Preferences → Dock → Autohide. Then run the following command:
 
-`defaults write com.apple.dock autohide-delay -float 0; killall Dock`
+`defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -float 0.15; killall Dock`
+
+The first removes the delay before the Dock appears, the second shortens the slide animation (use `0` for no animation).
 
 restore to default:
 
-`defaults delete com.apple.dock autohide-delay; killall Dock`
+`defaults delete com.apple.dock autohide-delay; defaults delete com.apple.dock autohide-time-modifier; killall Dock`
 
 ## Brew
 
