@@ -13,52 +13,36 @@ restore to default:
 
 ## Brew
 
-To install all of the below in a single go:
+Everything is listed in the [Brewfile](Brewfile). To install it all in a single go:
 
-`xargs brew install < my_brews.txt`
+`brew bundle --file=Brewfile`
 
-```txt
-azure-cli
-colima
-eza
-fzf
-go
-jq
-node
-nvm
-tldr
-hyperkey
-background-music
-```
+The casks (apps and fonts) may need admin rights, depending on the machine.
 
-## ~/.zshrc
+## Terminal (zsh + Oh My Zsh + Starship)
 
-I use [Oh My Zsh](https://ohmyz.sh/) with mostly standard settings.
+- [`.zshrc`](.zshrc) goes in `~/.zshrc`
+- [`.config/starship.toml`](.config/starship.toml) goes in `~/.config/starship.toml` (Tokyo Night prompt)
+
+Setup on a new Mac, after `brew bundle`:
 
 ```bash
-# Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+# Homebrew in PATH (the .zshrc relies on $HOMEBREW_PREFIX)
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
+# Oh My Zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# Eza (ls replacement) aliases
-alias ls='eza'
-alias l='eza -lbF --git'
-alias ll='eza -lbGF --git'
-alias llm='eza -lbGd --git --sort=modified'
-alias la='eza -lbhHigUmuSa --time-style=long-iso --git --color-scale'
-alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale'
-
-# specialty views
-alias lS='eza -1'
-alias lt='eza --tree --level=2'
-alias l.="eza -a | grep -E '^\.'"
+# Config files
+cp .zshrc ~/.zshrc
+mkdir -p ~/.config ~/.nvm && cp .config/starship.toml ~/.config/starship.toml
 ```
+
+Set the terminal font to **Hack Nerd Font Mono**, otherwise the prompt icons show as boxes.
 
 ## VS Code
 
