@@ -25,6 +25,7 @@ The casks (apps and fonts) may need admin rights, depending on the machine.
 
 - [`.zshrc`](.zshrc) goes in `~/.zshrc`
 - [`.config/starship.toml`](.config/starship.toml) goes in `~/.config/starship.toml` (Tokyo Night prompt)
+- [`.config/kitty/kitty.conf`](.config/kitty/kitty.conf) goes in `~/.config/kitty/kitty.conf` (Kitty terminal, Tokyo Night)
 
 Setup on a new Mac, after `brew bundle`:
 
@@ -42,9 +43,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 # Config files
 cp .zshrc ~/.zshrc
 mkdir -p ~/.config ~/.nvm && cp .config/starship.toml ~/.config/starship.toml
+mkdir -p ~/.config/kitty && cp .config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ```
 
-Set the terminal font to **Hack Nerd Font Mono**, otherwise the prompt icons show as boxes.
+Kitty picks up the font and colours from its config. In other terminals, set the font to **Hack Nerd Font Mono**, otherwise the prompt icons show as boxes.
 
 ## VS Code
 

@@ -21,6 +21,7 @@ brew "docker-compose"
 # Apps
 cask "background-music"
 cask "hyperkey"
+cask "kitty"
 cask "visual-studio-code"
 
 # Fonts
